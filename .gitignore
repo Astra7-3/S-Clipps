@@ -1,0 +1,18 @@
+node_modules/
+dist/
+build/
+.env
+*.log
+
+# Client build output
+client/build/
+
+# Server storage (temp files)
+server/uploads/*
+server/clips/*
+server/thumbnails/*
+
+# Keep directories
+!server/uploads/.gitkeep
+!server/clips/.gitkeep
+!server/thumbnails/.gitkeep

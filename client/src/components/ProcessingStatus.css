@@ -1,0 +1,120 @@
+.processing-wrap {
+  background: linear-gradient(135deg, rgba(157, 78, 221, 0.1), rgba(26, 26, 26, 0.8));
+  border: 1px solid var(--purple);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  animation: fadeInUp 0.4s ease;
+  box-shadow: 0 0 30px rgba(157, 78, 221, 0.15);
+}
+
+.processing-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Spinner ring */
+.processing-spinner-ring {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.processing-spinner-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 4px solid rgba(157, 78, 221, 0.2);
+  border-top-color: var(--purple);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.ring-inner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(255, 0, 110, 0.25);
+  border-bottom-color: var(--red);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite reverse;
+}
+
+.processing-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  margin-bottom: 0.25rem;
+}
+
+.processing-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Steps */
+.processing-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(157, 78, 221, 0.08);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  animation: pulse 2s ease infinite;
+}
+
+.step-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.step-label {
+  font-size: 0.875rem;
+  color: var(--white);
+  flex: 1;
+}
+
+.step-indicator {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 1s ease infinite;
+  flex-shrink: 0;
+}
+
+/* Progress bar */
+.processing-bar-track {
+  height: 6px;
+  background: rgba(157, 78, 221, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.processing-bar-fill {
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, var(--purple), var(--red), var(--green));
+  background-size: 200% 100%;
+  border-radius: 3px;
+  animation: shimmer 1.8s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .processing-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
